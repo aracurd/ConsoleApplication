@@ -1,0 +1,6 @@
+/Users/aracurd/RiderProjects/ConsoleApplication/ConsoleApplication/obj/Debug/ConsoleApplication.csprojResolveAssemblyReference.cache
+/Users/aracurd/RiderProjects/ConsoleApplication/ConsoleApplication/obj/Debug/ConsoleApplication.csproj.CoreCompileInputs.cache
+/Users/aracurd/RiderProjects/ConsoleApplication/ConsoleApplication/bin/Debug/Bank.exe
+/Users/aracurd/RiderProjects/ConsoleApplication/ConsoleApplication/bin/Debug/Bank.pdb
+/Users/aracurd/RiderProjects/ConsoleApplication/ConsoleApplication/obj/Debug/Bank.exe
+/Users/aracurd/RiderProjects/ConsoleApplication/ConsoleApplication/obj/Debug/Bank.pdb
