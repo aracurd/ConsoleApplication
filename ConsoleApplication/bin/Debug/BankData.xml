@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ArrayOfAccount xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Account xsi:type="Deposite" Balance="300" AccountNumber="5073" PRate="2" AccountStatus="true" />
+  <Account xsi:type="Deposite" Balance="400" AccountNumber="9490" PRate="3" AccountStatus="true" />
+  <Account xsi:type="Deposite" Balance="500" AccountNumber="7820" PRate="4" AccountStatus="true" />
+  <Account xsi:type="Deposite" Balance="600" AccountNumber="9462" PRate="5" AccountStatus="true" />
+  <Account xsi:type="Deposite" Balance="700" AccountNumber="6001" PRate="6" AccountStatus="true" />
+</ArrayOfAccount>

@@ -44,7 +44,7 @@
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\Bank.cs" />
     <Compile Include="Classes\Credit.cs" />
-    <Compile Include="Classes\Depisite.cs" />
+    <Compile Include="Classes\Deposite.cs" />
     <Compile Include="Classes\TableParser.cs" />
     <Compile Include="Classes\Valute.cs" />
     <Compile Include="IAccount.cs" />
@@ -52,7 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\Parsers" />
+    <Folder Include="Classes\Parsers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

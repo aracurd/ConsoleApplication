@@ -1,8 +1,16 @@
-﻿namespace Bank.Classes
+﻿using System;
+
+namespace Bank.Classes
 {
-    public class Depisite : Account
-    {  
-        public Depisite(decimal startBalance, int aNumber, decimal pRate, bool accountStatus = true) 
+    [Serializable]
+    public class Deposite : Account
+    {
+        public Deposite()
+        {
+            
+        }
+
+        public Deposite(decimal startBalance, int aNumber, decimal pRate, bool accountStatus = true) 
             : base(startBalance, aNumber, pRate, accountStatus)
         {
         }

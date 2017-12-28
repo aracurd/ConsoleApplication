@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Bank.Classes;
 using static System.Console;
 
@@ -8,26 +7,31 @@ namespace Bank
     internal class Program
     {
         static Banks banks = new Banks();
+        private static bool Go = true;
         public static void Main(string[] args)
         {
             Title = "Менеджер банка";
             WriteLine(Title);
             //Создание тестовых счетов
-            AddTestAccounts(5);
-            banks.ShoveAllAccounts();
+            AddTestAccounts(3);
             ReadKey();
-            while (true)
+            while (Go)
             {
               StartMessage();
+                if (Go)
+                    continue;
               ReadKey();
             }
+
+           // banks.ToXml<Account>();
+            banks.ToBin<Account>();
         }
 
         private static void AddTestAccounts(int count)
         {
             for (int i = 1; i <= count; i++)
             {
-                banks.CreateAccount(1, (i+2)*100, i+1);
+                banks.CreateAccount(i, (i+2)*100, i+1);
             }
         }
 
@@ -37,7 +41,8 @@ namespace Bank
             {
                 case 0:
                 {
-                    return;
+                    Go = false;
+                        break;
                 }
                 case 1:
                 {

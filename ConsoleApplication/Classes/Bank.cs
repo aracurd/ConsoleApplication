@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 
 namespace Bank.Classes
 {
@@ -7,8 +11,15 @@ namespace Bank.Classes
     {
         private readonly Random _random = new Random();
 
+        [XmlIgnore]
         public Dictionary<int, IAccount> Accounts { get; set; } = new Dictionary<int, IAccount>();
-     
+
+        public List<IAccount> AccountCollection
+        {
+            get { return Accounts.Values.ToList(); }
+            set { Accounts = new Dictionary<int, IAccount>(value.ToDictionary(k=> k.AccountNumber)); }
+        }
+
         public void CreateAccount(int type, decimal balance, decimal pRate = 0)
         {
             var account = GetAccountType(type, balance, pRate);
@@ -29,7 +40,7 @@ namespace Bank.Classes
         {
             switch (type)
             {
-                case  1: return new  Depisite(balance, NumberGnerator() ,pRate);
+                case  1: return new  Deposite(balance, NumberGnerator() ,pRate);
                 case  2: return new  Credit(balance,NumberGnerator(), pRate);
                 case  3: return new  Valute(balance, NumberGnerator(), pRate);
                 default: return new  Valute(balance, NumberGnerator(), pRate);
@@ -60,6 +71,23 @@ namespace Bank.Classes
                     account => account.Value.AccountStatus)
                 );
             
+        }
+
+        public void ToXml<T>()
+        {
+            XmlSerializer s = new XmlSerializer(typeof(List<T>), extraTypes: new [] {typeof(Deposite), typeof(Credit), typeof(Valute)});
+            using (FileStream fs = new FileStream(@"BankData.xml", FileMode.OpenOrCreate))
+            {
+                s.Serialize(fs, AccountCollection.OfType<T>().ToList());
+            }
+        }
+
+        public void ToBin<T>() {
+            BinaryFormatter binary = new BinaryFormatter();
+            using (FileStream fs = new FileStream(@"BinBankData.dat", FileMode.OpenOrCreate))
+            {
+                binary.Serialize(fs, AccountCollection.OfType<T>().ToList());
+            }
         }
 
         private string AccountType(IAccount type) => type.GetType().Name;

@@ -4,3 +4,9 @@
 /Users/aracurd/RiderProjects/ConsoleApplication/ConsoleApplication/bin/Debug/Bank.pdb
 /Users/aracurd/RiderProjects/ConsoleApplication/ConsoleApplication/obj/Debug/Bank.exe
 /Users/aracurd/RiderProjects/ConsoleApplication/ConsoleApplication/obj/Debug/Bank.pdb
+C:\Users\Freedom\Source\Repos\ConsoleApplication\ConsoleApplication\bin\Debug\Bank.exe
+C:\Users\Freedom\Source\Repos\ConsoleApplication\ConsoleApplication\bin\Debug\Bank.pdb
+C:\Users\Freedom\Source\Repos\ConsoleApplication\ConsoleApplication\obj\Debug\Bank.exe
+C:\Users\Freedom\Source\Repos\ConsoleApplication\ConsoleApplication\obj\Debug\Bank.pdb
+C:\Users\Freedom\Source\Repos\ConsoleApplication\ConsoleApplication\obj\Debug\ConsoleApplication.csprojResolveAssemblyReference.cache
+C:\Users\Freedom\Source\Repos\ConsoleApplication\ConsoleApplication\obj\Debug\ConsoleApplication.csproj.CoreCompileInputs.cache

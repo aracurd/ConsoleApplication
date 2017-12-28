@@ -1,16 +1,18 @@
-﻿namespace Bank.Classes
+﻿using System;
+using System.Xml;
+using System.Xml.Serialization;
+
+namespace Bank.Classes
 {
-    public abstract class Account : IAccount
+    [Serializable]
+    public class Account : IAccount
     {
-        internal decimal Balance { get; set; }
+        public Account()
+        {
 
-        public int AccountNumber { get; }
-        
-        public decimal PRate { get; }
+        }
 
-        public bool AccountStatus { get; set; }
-
-        protected Account(decimal startBalance, int aNumber, decimal pRate, bool accountStatus = true)
+        public Account(decimal startBalance, int aNumber, decimal pRate, bool accountStatus)
         {
             Balance = startBalance;
             AccountNumber = aNumber;
@@ -18,7 +20,22 @@
             AccountStatus = accountStatus;
         }
 
-        public abstract void AddMoney(decimal inValue);
+        [XmlAttribute]
+        public decimal Balance { get; set; }
+
+        [XmlAttribute]
+        public int AccountNumber { get; set; }
+
+        [XmlAttribute]
+        public decimal PRate { get; set; }
+
+        [XmlAttribute]
+        public bool AccountStatus { get; set; }
+
+        public virtual void AddMoney(decimal inValue)
+        {
+            throw new NotImplementedException();
+        }
 
         public virtual decimal GetMoney(decimal outValue) => Balance -= outValue;
 
